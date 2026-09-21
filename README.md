@@ -1,1 +1,1 @@
-# vkeducation_android
+# Репозиторий по курсу "Основы Android-разработки"

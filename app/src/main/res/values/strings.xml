@@ -5,4 +5,6 @@
     <string name="text_field_label">Поле ввода</string>
     <string name="button_call_friend">Позвонить другу</string>
     <string name="toast_check_number">Проверьте корректность набранного номера</string>
+    <string name="button_send">Поделиться текстом</string>
+    <string name="intent_send_title">Поделиться через…</string>
 </resources>

@@ -2,6 +2,7 @@ package com.practicum.vkeducation
 
 import android.content.Intent
 import android.content.Intent.ACTION_DIAL
+import android.content.Intent.ACTION_SEND
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -35,6 +36,7 @@ class MainActivity : ComponentActivity() {
 
                     val intent = Intent(this, SecondActivity::class.java)
                     val implicitIntent = Intent(ACTION_DIAL)
+                    val implicitIntentSend = Intent(ACTION_SEND)
                     EnterNumberScreen(
                         modifier = Modifier.padding(innerPadding),
                         onClickToSecondActivity = {
@@ -48,6 +50,17 @@ class MainActivity : ComponentActivity() {
                                 data = "tel:$it".toUri()
                             }
                             startActivity(implicitIntent)
+                        },
+                        onClickSend = {
+                            implicitIntentSend.apply {
+                                type = "text/plain"
+                                putExtra(Intent.EXTRA_TEXT, it)
+                            }
+                            val finalIntent = Intent.createChooser(
+                               implicitIntentSend,
+                                this.getString(R.string.intent_send_title)
+                            )
+                            startActivity(finalIntent)
                         }
                     )
                 }
@@ -60,7 +73,8 @@ class MainActivity : ComponentActivity() {
 fun EnterNumberScreen(
     modifier: Modifier,
     onClickToSecondActivity: (String) -> Unit,
-    onClickDial: (String) -> Unit
+    onClickDial: (String) -> Unit,
+    onClickSend: (String) -> Unit
 ) {
     val textFieldState = rememberTextFieldState()
     val context = LocalContext.current
@@ -90,6 +104,11 @@ fun EnterNumberScreen(
                     return@Button
                 }},
             content = { Text(text = stringResource(R.string.button_call_friend)) }
+        )
+
+        Button(
+            onClick = { onClickSend(textFieldState.text.toString()) },
+            content = { Text(text = stringResource(R.string.button_send))}
         )
     }
 }

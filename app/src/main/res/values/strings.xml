@@ -3,4 +3,6 @@
     <string name="title_activity_second">SecondActivity</string>
     <string name="button_open_second_activity">Открыть вторую Activity</string>
     <string name="text_field_label">Поле ввода</string>
+    <string name="button_call_friend">Позвонить другу</string>
+    <string name="toast_check_number">Проверьте корректность набранного номера</string>
 </resources>

@@ -87,6 +87,10 @@ fun AppDetailsContent(
                 .fillMaxWidth()
                 .padding(start = 16.dp),
         )
+        Spacer(Modifier.height(12.dp))
+        Showcase(
+
+        )
     }
 }
 

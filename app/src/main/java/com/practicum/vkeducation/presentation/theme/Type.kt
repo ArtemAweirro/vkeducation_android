@@ -1,4 +1,4 @@
-package com.practicum.vkeducation.ui.theme
+package com.practicum.vkeducation.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -8,19 +8,21 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.practicum.vkeducation.domain.appdetails.AppSummary
 import com.practicum.vkeducation.domain.appdetails.Content
 
 @Composable
 fun AppDetailsScreen(
-    content: Content
+    content: Content,
+    onBackClick: () -> Unit,
+    onShowcaseAppClick: (AppSummary) -> Unit
 ) {
     Scaffold(
         modifier = Modifier.background(MaterialTheme.colorScheme.surface)
     ) { contentPadding ->
         AppDetailsContent(
             content = content,
-            onBackClick = {
-            },
+            onBackClick = onBackClick,
             onShareClick = {
             },
             onInstallClick = {
@@ -31,6 +33,7 @@ fun AppDetailsScreen(
             },
             onDeveloperClick = {
             },
+            onShowcaseAppClick = onShowcaseAppClick,
             modifier = Modifier
                 .fillMaxSize()
                 .safeDrawingPadding()

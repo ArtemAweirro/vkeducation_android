@@ -1,6 +1,7 @@
 package com.practicum.vkeducation.presentation.applist
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -18,14 +19,16 @@ import coil3.compose.AsyncImage
 
 @Composable
 internal fun Toolbar(
+    modifier: Modifier = Modifier,
     appIconUrl: String,
-    modifier: Modifier = Modifier
+    onClick: () -> Unit = {}
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.primary)
             .statusBarsPadding()
+            .clickable(onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 12.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

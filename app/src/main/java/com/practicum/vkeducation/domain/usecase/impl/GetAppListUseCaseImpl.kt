@@ -9,7 +9,7 @@ class GetAppListUseCaseImpl @Inject constructor(
     private val repository: AppListRepository
 ) : GetAppListUseCase {
 
-    override operator fun invoke(): List<AppSummary> {
+    override suspend operator fun invoke(): List<AppSummary> {
         return repository.getAppList()
     }
 }

@@ -12,6 +12,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.practicum.vkeducation.domain.appdetails.AppSummary
@@ -19,7 +20,7 @@ import com.practicum.vkeducation.domain.appdetails.AppSummary
 @Composable
 fun AppListScreen(
     onClickApp: () -> Unit,
-    viewModel: AppListViewModel = viewModel()
+    viewModel: AppListViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }

@@ -1,8 +1,9 @@
 package com.practicum.vkeducation.data.datasource
 
 import com.practicum.vkeducation.data.dto.AppSummaryDto
+import javax.inject.Inject
 
-class AppListLocalDataSource {
+class AppListLocalDataSource @Inject constructor() {
 
     fun getAppList(): List<AppSummaryDto> {
         return listOf(

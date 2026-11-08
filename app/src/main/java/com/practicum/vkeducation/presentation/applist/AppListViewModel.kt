@@ -6,6 +6,7 @@ import com.practicum.vkeducation.data.repository.AppListRepositoryImpl
 import com.practicum.vkeducation.domain.appdetails.AppSummary
 import com.practicum.vkeducation.domain.usecase.GetAppListUseCase
 import com.practicum.vkeducation.domain.usecase.impl.GetAppListUseCaseImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -13,6 +14,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 data class AppListUiState(
     val appSummaryList: List<AppSummary> = emptyList(),
@@ -23,8 +25,9 @@ sealed interface AppListEvent {
     data class ShowSnackbar(val message: String) : AppListEvent
 }
 
-class AppListViewModel(
-    private val getAppListUseCase: GetAppListUseCase = GetAppListUseCaseImpl(AppListRepositoryImpl())
+@HiltViewModel
+class AppListViewModel @Inject constructor(
+    private val getAppListUseCase: GetAppListUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AppListUiState())

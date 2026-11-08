@@ -41,8 +41,16 @@ class AppListViewModel @Inject constructor(
     }
 
     private fun loadAppList() {
-        val appList = getAppListUseCase()
-        _uiState.update { it.copy(appSummaryList = appList) }
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+            runCatching {
+                getAppListUseCase()
+            }.onSuccess { appList ->
+                _uiState.update { it.copy(appSummaryList = appList, isLoading = false) }
+            }.onFailure {
+                _uiState.update { it.copy(isLoading = false) }
+            }
+        }
     }
 
     fun onToolbarClick() {

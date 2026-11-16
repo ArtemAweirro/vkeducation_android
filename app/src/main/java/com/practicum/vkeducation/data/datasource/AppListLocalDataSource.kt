@@ -10,7 +10,7 @@ class AppListLocalDataSource @Inject constructor() {
             AppSummaryDto(
                 id = "fa2e31b8-1234-4cf7-9914-108a170a1b01",
                 name = "Гильдия Героев: Экшен ММО РПГ",
-                description = "Легендарный рейд героев в Фэнтези РПГ. Станьте героем гильдии и зразите мастера подземелья!",
+                description = "Легендарный рейд героев в Фэнтези РПГ. Станьте героем гильдии и сразите мастера подземелья!",
                 iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
                 category = "GAME"
             ),
@@ -41,6 +41,41 @@ class AppListLocalDataSource @Inject constructor() {
                 description = "Быстрый и надежный почтовый клиент с умным фильтром писем.",
                 iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
                 category = "PRODUCTIVITY"
+            ),
+            AppSummaryDto(
+                id = "fa2e31b8-1234-4cf7-9914-108a170a1b06",
+                name = "Календарь",
+                description = "Удобный календарь и планировщик задач на каждый день.",
+                iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
+                category = "PRODUCTIVITY"
+            ),
+            AppSummaryDto(
+                id = "fa2e31b8-1234-4cf7-9914-108a170a1b07",
+                name = "Заметки",
+                description = "Сохраняйте мысли, списки покупок и важную информацию.",
+                iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
+                category = "PRODUCTIVITY"
+            ),
+            AppSummaryDto(
+                id = "fa2e31b8-1234-4cf7-9914-108a170a1b08",
+                name = "Здоровье и Шагомер",
+                description = "Отслеживание активности, шагов и тренировок.",
+                iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
+                category = "HEALTH"
+            ),
+            AppSummaryDto(
+                id = "fa2e31b8-1234-4cf7-9914-108a170a1b09",
+                name = "Новости Дня",
+                description = "Самые свежие и актуальные новости мира и России.",
+                iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
+                category = "NEWS"
+            ),
+            AppSummaryDto(
+                id = "fa2e31b8-1234-4cf7-9914-108a170a1b10",
+                name = "Карты и Навигация",
+                description = "Удобный поиск организаций, маршруты общественным транспортом и на авто.",
+                iconUrl = "https://static.rustore.ru/imgproxy/APsbtHxkVa4MZ0DXjnIkSwFQ_KVIcqHK9o3gHY6pvOQ/preset:web_app_icon_62/plain/https://static.rustore.ru/apk/393868735/content/ICON/3f605e3e-f5b3-434c-af4d-77bc5f38820e.png@webp",
+                category = "MAPS"
             )
         )
     }

@@ -18,13 +18,12 @@ import androidx.compose.ui.unit.dp
 import com.practicum.vkeducation.domain.appdetails.AppDetails
 import com.practicum.vkeducation.domain.appdetails.AppSummary
 import com.practicum.vkeducation.domain.appdetails.Category
-import com.practicum.vkeducation.domain.appdetails.Content
 import com.practicum.vkeducation.domain.appdetails.SimilarApp
 import com.practicum.vkeducation.presentation.theme.VkeducationTheme
 
 @Composable
 fun AppDetailsContent(
-    content: Content,
+    content: AppDetailsState.Content,
     onBackClick: () -> Unit,
     onShareClick: () -> Unit,
     onInstallClick: () -> Unit,
@@ -49,6 +48,7 @@ fun AppDetailsContent(
         )
         Spacer(Modifier.height(16.dp))
         InstallButton(
+            installState = content.installState,
             onClick = onInstallClick,
             modifier = Modifier
                 .fillMaxWidth()
@@ -104,7 +104,7 @@ fun AppDetailsContent(
 private fun Preview() {
     VkeducationTheme {
         AppDetailsContent(
-            content = Content(
+            content = AppDetailsState.Content(
                 appDetails = AppDetails(
                     id = "fa2e31b8-1234-4cf7-9914-108a170a1b01",
                     name = "Гильдия Героев: Экшен ММО РПГ",
@@ -138,6 +138,7 @@ private fun Preview() {
                     )
                 },
                 descriptionCollapsed = false,
+                installState = InstallState.NotInstalled,
             ),
             onReadMoreClick = {},
             onBackClick = {},
